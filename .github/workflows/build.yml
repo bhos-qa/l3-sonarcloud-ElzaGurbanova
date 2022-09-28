@@ -5,7 +5,7 @@ on:
       - develop
   pull_request:
     branches:
-      -develop
+      - develop
 jobs:
   build:
     name: Build
