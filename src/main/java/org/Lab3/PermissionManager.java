@@ -1,4 +1,4 @@
-package org.Lab3;
+package org.Lab3.;
 
 enum PermissionLevel {
     ADMIN,
