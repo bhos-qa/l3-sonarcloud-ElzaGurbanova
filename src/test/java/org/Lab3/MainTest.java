@@ -1,19 +1,31 @@
 package org.Lab3;
-import org.Lab3.PermissionManager;
 
-public class Main_test {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-    PermissionManager permissionManager;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+
+class PermissionManagerTest {
+
+    PermissionManager manager;
+    HashMap<PermissionLevel, String> permissions = new HashMap<>();
 
     @BeforeEach
-    void setUp() {
-        permissionManager = new PermissionManager();
+    void setup() {
+        manager = new PermissionManager();
+        permissions.put(PermissionLevel.ADMIN, "ADMIN");
+        permissions.put(PermissionLevel.USER, "USER");
+        permissions.put(PermissionLevel.DEVELOPER, "DEVELOPER");
     }
 
     @Test
-    @DisplayName("Simple enum should work")
-    void testGet() {
-        assertEquals(20, calculator.get(4, 5),
-                "Regular multiplication should work");
+    void checkGetmCurrentLevel() {
+        for (PermissionLevel permissionLevel: permissions.keySet()) {
+            manager.setmCurrentLevel(permissionLevel);
+            assertEquals(permissions.get(permissionLevel), manager.getmCurrentLevel());
+        }
     }
 }
