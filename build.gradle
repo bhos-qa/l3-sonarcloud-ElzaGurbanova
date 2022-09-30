@@ -4,7 +4,7 @@ plugins {
     id 'jacoco'
 }
 
-group 'org.l3-sonarcloud-ElzaGurbanova'
+group 'org.Lab3'
 version '1.0-SNAPSHOT'
 
 repositories {
